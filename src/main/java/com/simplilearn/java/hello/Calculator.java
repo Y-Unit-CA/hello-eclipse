@@ -10,7 +10,7 @@ public class Calculator {
 		System.out.println("Divide: " + divide(5,4));
 		System.out.println("Round: " + round(5.1374));
 		System.out.println("isEven: " + isEven(10));
-		System.out.println("isOdd: " + isOdd(0));
+		System.out.println("isOdd: " + isOdd(8));
 		System.out.println("XNOR: " + XNOR(true, false));
 		System.out.println("addThreeNumbers: " + addThreeNumbers(5,4,23));
 		System.out.println("lessThan: " + lessThan(5,4));
@@ -33,7 +33,7 @@ public class Calculator {
 	
 	// divide: take two integers and return double
 	private static double divide (int left, int right) {
-		return left / right;
+		return (double) left / right;
 	}
 	
 	// round: take a single double param, return int
@@ -43,12 +43,13 @@ public class Calculator {
 	
 	// isEven (take a single integer) and return true if it is even
 	private static boolean isEven (int i) {
-		return (i % 2 == 0) && (i != 0);
+		return (i % 2 == 0);
 	}
 	
-	// isOdd (take a single integer) and return true if it is odd
+	// isOdd (take a single integer) and return true if it is odd - don't use modular operator
 	private static boolean isOdd (int i) {
-		return (i % 2 == 1) && (i != 0);
+		// return (i % 2 == 1) && (i != 0);
+		return ! isEven(i);
 	}
 	
 	// XNOR (take two booleans and returns true if they are both true or both false)
