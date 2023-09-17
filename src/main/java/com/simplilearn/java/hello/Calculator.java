@@ -33,28 +33,33 @@ public class Calculator {
 	
 	// divide: take two integers and return double
 	private static double divide (int left, int right) {
-		return (double) left / right;
+		// return (double) left / right;
+		return left / (double) right;    // better
 	}
 	
 	// round: take a single double param, return int
 	private static int round (double d) {
-		return (int) Math.round(d);
+		// return (int) Math.round(d);
+		return (int) (d + 0.5);
 	}
 	
 	// isEven (take a single integer) and return true if it is even
 	private static boolean isEven (int i) {
-		return (i % 2 == 0);
+		// return (i % 2 == 0);
+		return i % 2 == 0;
 	}
 	
 	// isOdd (take a single integer) and return true if it is odd - don't use modular operator
 	private static boolean isOdd (int i) {
 		// return (i % 2 == 1) && (i != 0);
+		// could cleverly use bitwise operator
 		return ! isEven(i);
 	}
 	
 	// XNOR (take two booleans and returns true if they are both true or both false)
 	private static boolean XNOR (boolean x, boolean y) {
-		return (x && y) || (!x && !y);
+		// return (x && y) || (!x && !y);
+		return x == y;
 	}
 	
 	// add three numbers
